@@ -13,8 +13,9 @@ export class AppMenu extends BaseComponent {
 
   addMenuEventListeners() {
     const btns = this.findAll('button')
+
     for (let btn of btns) {
-      this.addEventListener(`.${btn.classList[0]}`, 'click', (e) => {
+      btn.addEventListener('click', (e) => {
         e.target.dispatchEvent(new CustomEvent('option-select', {
           bubbles: true,
           composed: true
